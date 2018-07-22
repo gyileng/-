@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/comment/comment",
+    "pages/search/search",
+    "pages/comment/submit",
+    "pages/google/google",
+    "pages/comment/answer",
+    "pages/WxComment/component/WxComment/WxComment"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小猪医科",
+    "navigationBarTextStyle":"black"
+  },
+    "tabBar": {
+      "color": "#626567",
+      "selectedColor": "#2A8CE5",
+      "backgroundColor": "#FBFBFB",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/search/search",
+          "text": "搜索"
+        },
+        {
+          "pagePath": "pages/comment/comment",
+          "text": "讨论"
+        }
+      ]
+    }
+}

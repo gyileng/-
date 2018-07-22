@@ -1,0 +1,18 @@
+<import src="../wxSearch/wxSearch.wxml" />
+<view class="container">
+  <view class="wxSearch-section">
+    <view class="wxSearch-pancel">
+      <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" name="question" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索" />
+      <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+    </view>
+  </view>
+  <view wx:for="{{googleData.value}}">
+    <navigator url="../google/google?title={{item.link}}" hover-class="navigator-hover">
+      <text type="default" style='color: #1a0dab;font-size: 30px'>{{item.title}}</text>
+    </navigator>
+    <text>{{item.snippet}}</text>
+    <view class='divLine'></view>
+  </view>
+</view>
+
+<template is="wxSearch" data="{{wxSearchData}}" />

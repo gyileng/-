@@ -1,0 +1,8 @@
+<view class="container">
+  <view>
+    <text class='title'>{{question}}</text>
+  </view>
+  <view class="WxComment">
+    <WxComment tipOne="Markdown " tipTwo="will be supported, Powered by yicm." submitBtnText="回复" articleID="{{article_id}}" contentLen='1' theme="light"></WxComment>
+  </view>
+</view>

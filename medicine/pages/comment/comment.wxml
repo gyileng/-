@@ -1,0 +1,31 @@
+<view class="container">
+  <view class="page-body">
+    <view class="btn-area">
+      <navigator url="submit" hover-class="navigator-hover">
+        <button type="default">提问</button>
+      </navigator>
+    </view>
+  </view>
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-item">
+      <view class="feed-content">
+        <view class="question" qid="{{item.article_id}}" bindtap="bindQueTap">
+          <navigator url="answer?article_id={{item.article_id}}&question={{item.question}}" hover-class="navigator-hover">
+            <text type="default" style='color: #1a0dab;font-size: 30px'>{{item.question}}</text>
+          </navigator>
+        </view>
+        <view class="answer-body">
+          <view bindtap="bindItemTap">
+            <text class="answer-txt" aid="{{answer_id}}"> 热门回答: {{item.answer_ctnt}} </text>
+          </view>
+          <!-- <view class="answer-actions" bindtap="bindItemTap">
+          <view class="like dot"> <a>{{item.good_num}} 赞同 </a> </view>
+          <view class="comments dot"> <a>{{item.comment_num}} 评论 </a> </view>
+          <view class="follow-it"> <a>关注问题</a> </view>
+        </view> -->
+        </view>
+      </view>
+    </view>
+    <view class='divLine'></view>
+  </block>
+</view>
