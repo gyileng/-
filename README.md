@@ -14,3 +14,7 @@
    ![小猪医科_03](https://github.com/gyileng/python-spider/blob/master/00-%E6%9D%82%E9%A1%B9/%E5%B0%8F%E7%8C%AA%E5%8C%BB%E7%A7%91_04.png)
    ![小猪医科_04](https://github.com/gyileng/python-spider/blob/master/00-%E6%9D%82%E9%A1%B9/%E5%B0%8F%E7%8C%AA%E5%8C%BB%E7%A7%91_06.png)
    ![小猪医科_02](https://github.com/gyileng/python-spider/blob/master/00-%E6%9D%82%E9%A1%B9/%E5%B0%8F%E7%8C%AA%E5%8C%BB%E7%A7%91_07.png)
+
+#### 结语
+   &ensp;&ensp;目前项目还处于初级阶段，很多地方待完善，望广大医疗界，It界，新闻媒体界，基金界院士，发散思维，为小生提供一点思路，让我们有做下去的动力，做好，做强，做远！
+   Thanks everybody！
