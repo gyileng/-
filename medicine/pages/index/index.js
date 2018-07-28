@@ -8,29 +8,44 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    movies: [
-      { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-      { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-      { url: 'http://img02.tooopen.com/images/20141231/sy_78327074576.jpg' }
+    articles: [
+
     ],
-    news: [
-      {
-        news_name: "人民日报山东分社：不能任由恐慌情绪蔓延，相关部门要回应问题疫苗",
-        picture: [
-          { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-          { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-          { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-        ]
+    sections: [{
+        "name": "国内",
+        "active": true
       },
       {
-        news_name: "人民日报山东分社：不能任由恐慌情绪蔓延，相关部门要回应问题疫苗",
-        picture: [
-          { url: 'http://img04.tooopen.com/images/20130712/tooopen_17270713.jpg' },
-          { url: 'http://img04.tooopen.com/images/20130617/tooopen_21241404.jpg' },
-          { url: 'http://img04.tooopen.com/images/20130701/tooopen_20083555.jpg' },
-        ]
-      }
+        "name": "国际",
+        "active": false
+      },
     ]
-  }
+  },
+  onLoad: function() {
+    var that = this
+    wx.request({
+      url: 'http://127.0.0.1:5000/index/chinese',
+      method: 'post',
+      success: function(res) {
+        that.setData({
+          articles: res.data.data
+        })
+      }
+    })
+  },
+  onSectionClicked: function (e) {
+    var sid = e.currentTarget.dataset.sid;
+    //刷新选中状态
+    for (var i in sectionData) {
+      if (sectionData[i]['section_id'] == sid) {
+        sectionData[i]['active'] = true
+        currentSectionIndex = i
+      }
+      else
+        sectionData[i]['active'] = false
+    }
+    this.setData({
+      sections: sectionData
+    });
+  },
 })

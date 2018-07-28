@@ -8,10 +8,30 @@ App({
 
     // 登录
     wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+      success: function (res) {
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+            url: 'http://127.0.0.1:5000/login',
+            method: 'post',
+            data: {
+              code: res.code
+            },
+            success: function (res) {
+              wx.showModal({
+                title: 'Tips',
+                content: res.data.msg,
+              })
+            }
+          })
+        } else {
+          wx.showModal({
+            title: 'Tips',
+            content: 'login fails',
+          })
+        }
       }
-    })
+    });
     // 获取用户信息
     wx.getSetting({
       success: res => {

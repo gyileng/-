@@ -1,29 +1,40 @@
-/**index.wxss**/
-.new {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;
+.segments{
+  width:100%;
+  height:38px;
+  background: #f6f6f6;
+  white-space: nowrap;
+  font-size:15px;
+  position: fixed;
+  top: 0;
+  z-index:1;
 }
 
-.new-image {
-  width: 80px;
-  height: 80px;
-  margin-left: 20px
+.section{
+  width:20%;
+  height:100%;
+  text-align: center;
+  color:#000;
+  display: inline-block;
+  line-height: 35px;
+  padding-left: 20%;
 }
 
-.swiper {
-  margin-bottom: 10px;
-  height: 400rpx;
-  width: 100%;
-}
-.swiper image {
-  height: 100%;
-  width: 100%;
+.section.active{
+  color:#d43d3d;
 }
 
-.divLine{
- background: #f3f3f3;
- width: 100%;
- height: 15rpx;
+.date{
+  float: right
+}
+
+.divLine {
+  background: #f3f3f3;
+  width: 100%;
+  height: 15rpx;
+}
+
+.news_image{
+  width:50%;
+  height:130px;
+  padding-left: 25%
 }

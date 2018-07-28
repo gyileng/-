@@ -6,7 +6,8 @@
     "pages/comment/submit",
     "pages/google/google",
     "pages/comment/answer",
-    "pages/WxComment/component/WxComment/WxComment"
+    "pages/WxComment/component/WxComment/WxComment",
+    "pages/index/news"
   ],
   "window":{
     "backgroundTextStyle":"light",

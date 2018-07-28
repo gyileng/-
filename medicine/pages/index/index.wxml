@@ -1,19 +1,37 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
-    <block wx:for="{{movies}}" wx:for-index="index" wx:key="*this">
-      <swiper-item>
-        <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class='new' wx:for="{{news}}" wx:key="*this">
-    <view class='news_name'>
-      {{item.news_name}}
+  <scroll-view class="segments" scroll-x="true">
+    <view wx:for="{{sections}}" class="section {{item.active ? 'active' : ''}}" data-sid="{{item.section_id}}" bindtap="onSectionClicked">
+      <text>{{item.name}}</text>
     </view>
-    <view class="new-images" wx:for="{{item.picture}}">
-      <image src="{{item.url}}" class="new-image" mode="aspectFill" />
+  </scroll-view>
+  <text>
+  假装看不见
+  </text>
+  <!--文章列表-->
+  <view class="articles">
+    <view wx:for="{{articles}}" class="article" data-aid="{{item.title}}" bindtap="onArticleClicked">
+    <navigator url="./news?title={{item.url}}" hover-class="navigator-hover">
+      <view class="left">
+          <view class="title">
+            {{item.title}}
+          </view>
+        <view class="subTitle">
+          <!--这边可以加副标题-->
+        </view>
+      </view>
+      <view class="right">
+        <image src="{{item.image}}" class='news_image' />
+      </view>
+      <view class="cnt">
+        <text>  阅读:{{item.desc}}</text>
+        <!-- <view class="date"> -->
+        <text class='date'>{{item.date}}</text>
+        <!-- </view> -->
+      </view>
+      </navigator>
+      <view class='divLine'></view>
+      <view style="clear:both"></view>
     </view>
-    <view class='divLine'></view>
   </view>
 </view>
